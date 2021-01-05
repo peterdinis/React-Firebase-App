@@ -12,3 +12,6 @@ const firebaseConfig = firebase.initializeApp({
   });
   
   export default firebaseConfig;
+
+  // https://michaelburrows.hashnode.dev/react-user-registration-and-authentication-using-firebase-ckhmqsml2041e9ms18a3hht2k
+  // https://console.firebase.google.com/project/react-auth-project-6cfdf/settings/general/web:YWUxYzJmOTMtNjZmZC00NGJmLWJhYWUtMDg2YTE4ZmY4YjVm
