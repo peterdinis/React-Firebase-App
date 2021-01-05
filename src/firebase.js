@@ -1,5 +1,5 @@
 import firebase from "firebase/app";
-import "firebase/auth";
+import 'firebase/auth';
 
 const firebaseConfig = firebase.initializeApp({
     apiKey: "AIzaSyBLqGPZaNUF9rT9Ty0PIUOhE6XZFRvwW7U",
@@ -12,6 +12,3 @@ const firebaseConfig = firebase.initializeApp({
   });
   
   export default firebaseConfig;
-
-  // https://michaelburrows.hashnode.dev/react-user-registration-and-authentication-using-firebase-ckhmqsml2041e9ms18a3hht2k
-  // https://console.firebase.google.com/project/react-auth-project-6cfdf/settings/general/web:YWUxYzJmOTMtNjZmZC00NGJmLWJhYWUtMDg2YTE4ZmY4YjVm
