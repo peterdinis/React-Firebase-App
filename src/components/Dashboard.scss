@@ -1,0 +1,14 @@
+.logged-out {
+    margin-top: 1rem;
+    margin-left: 2px;
+    color: #eee;
+    background: #a10000;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+
+    &:hover {
+        outline: none;
+    }
+}
