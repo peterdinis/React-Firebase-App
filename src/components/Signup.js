@@ -4,31 +4,26 @@ import {Redirect} from 'react-router-dom';
 import firebaseConfig from '../firebase';
 
 function Signup() {
-    const [user, setUser] = useState(null);
+    const [currentUser, setCurrentUser] = useState(null);    
+    const handleSubmit = (e) => {
+      e.preventDefault();    
+      const { email, password } = e.target.elements;
+      try {
+        firebaseConfig.auth().createUserWithEmailAndPassword(email.value, password.value);      
+        setCurrentUser(true);
+      } catch (error) {
+        alert(error);
+      }
+    };
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-        // vytvoriť používateľa tuto
-        const {email, password} = e.target.elements;
-        try {
-            // použitie firebase auth
-            firebaseConfig.auth().createUserWithEmailAndPassword(email.value, password.value);
-            setUser(true);
-        } catch(err) {
-            console.error(err);
-        }   
-    }
-
-    if(user) {
-        return (
-            <Redirect to='/dashboard' />
-        )
+    if (currentUser) {
+        return <Redirect to="/dashboard" />;
     }
 
     return (
         <div>
         <h1>Signup Here</h1>
-        <form className='form-helper' onSubmit={handleFormSubmit}>
+        <form className='form-helper' onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label className='labelOne' for="exampleInputEmail1">Email address</label>
                         <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
@@ -44,4 +39,4 @@ function Signup() {
     )
 }
 
-export default Signup
+export default Signup;
