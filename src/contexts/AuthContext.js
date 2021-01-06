@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import firebaseConfig from "../firebase";
+import firebaseConfig from "../firebase/firebase";
 
 export const AuthContext = React.createContext();
 
@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
     firebaseConfig.auth().onAuthStateChanged((user) => {
       setCurrentUser(user);
       setLoading(false);
-    });
+    }); 
   }, []);
   if (loading) {
     return <p>Loading...</p>;

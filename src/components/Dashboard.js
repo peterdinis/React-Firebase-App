@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Redirect} from 'react-router-dom';
 import {AuthContext} from '../contexts/AuthContext';
-import firebaseConfig from '../firebase';
+import firebaseConfig from '../firebase/firebase';
 import './Dashboard.scss';
 
 const Dashboard = () => {
