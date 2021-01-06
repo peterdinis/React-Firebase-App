@@ -1,0 +1,39 @@
+@import '../variables.scss';
+
+.heading {
+    color: $headingColor;
+}
+
+.form-control {
+    width: 20% !important;
+}
+
+.form-helper {
+    margin-left: 2rem;
+    margin-top: 2rem;
+
+    .signin-button {
+        margin-top: 1rem;
+        margin-left: 2px;
+        color: #eee;
+        background: #db930d;
+        padding: 0.25rem 0.75rem;
+        border-radius: 6px;
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+
+        &:hover {
+            outline: none;
+        }
+    }
+
+    .error {
+        color: $errorColor;
+    }
+}
+
+.form-group {
+    .passwordLabel {
+        margin-top: 1rem;
+    }
+}

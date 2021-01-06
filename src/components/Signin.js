@@ -18,14 +18,19 @@ const Signin = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      {/* replace the div tags with a form tag */}
-      Signin
-      {/* make inputs  */}
-      <input onChange={handleChange} name="email" placeholder='email' value={inputs.email} />
-      <input onChange={handleChange} name="password" placeholder='password' value={inputs.password} />
-      <button>signin</button>
-      {errors.length > 0 ? errors.map(error => <p style={{color: 'red'}}>{error}</p> ) : null}
+    <form className='form-helper' onSubmit={handleSubmit}>
+        <div className='form-group'>
+          <h1 className='heading'>Sign In</h1>
+            <label className='emailLabel' htmlFor='email'>Email</label>
+            <input type='email' className='form-control' onChange={handleChange} name="email" placeholder='email' value={inputs.email} />
+        </div>
+
+        <div className='form-group'>
+          <label className='passwordLabel' htmlFor='password'>Password</label>
+          <input type='password' className='form-control' onChange={handleChange} name="password" placeholder='password' value={inputs.password} />
+        </div>
+        {errors.length > 0 ? errors.map(error => <p className='error'>{error}</p> ) : null}
+        <button className='signin-button'>SignIn</button>
     </form>
   );
 };

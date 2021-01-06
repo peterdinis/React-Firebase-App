@@ -8,8 +8,7 @@ import {firebaseAuth} from './contexts/AuthProvider';
 function App() {
   const {token} = useContext(firebaseAuth);
   console.log(token);
-
-  
+ 
   return (
     <div>
     <Switch>
