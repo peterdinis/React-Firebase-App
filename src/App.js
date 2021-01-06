@@ -1,18 +1,23 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Route, Switch} from 'react-router-dom';
-import Home from './components/Home';
-import Dashboard from './components/Dashboard';
-import Login from './components/Login';
 import Signup from './components/Signup';
+import Signin from './components/Signin';
+import Home from './components/Home';
+import {firebaseAuth} from './contexts/AuthProvider';
 
 function App() {
+  const {token} = useContext(firebaseAuth);
+  console.log(token);
+
+  
   return (
+    <div>
     <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/dashboard' component={Dashboard} />
-        <Route exact path='/login' component={Login} />
+        <Route exact path='/' render={rProps => token === null ? <Signin /> : <Home />} />
+        <Route exact path='/signin' component={Signin} />
         <Route exact path='/signup' component={Signup} />
     </Switch>
+  </div>
   )
 }
 

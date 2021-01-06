@@ -1,26 +1,16 @@
 import React, {useContext} from 'react';
-import {Link} from 'react-router-dom';
+import {firebaseAuth} from '../contexts/AuthProvider';
 import './Home.scss';
-import {AuthContext} from '../contexts/AuthContext'
 
-function Home() {
-    const {currentUser} = useContext(AuthContext);
-    return (
-        <div className='homepage'>
-            <h1>
-                Home
-            </h1>
-            {currentUser ? (
-                <p>
-                You are logged - <Link  to="/dashboard">View Dashboard</Link>
-                </p>
-            ) : (
-                <p>
-                <Link className='link' to="/login">Login</Link> <span className='link-subtext'>or</span> <Link className='link' to="/signup">Sign up</Link> 
-                </p>
-            )}
-        </div>
-    )
-}
+const Home = (props) => {
 
-export default Home
+  const {handleSignout,} = useContext(firebaseAuth)
+  return (
+    <div>
+      Home, login successful!!!!!!
+      <button onClick={handleSignout}>sign out </button>
+    </div>
+  );
+};
+
+export default Home;
