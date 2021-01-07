@@ -4,7 +4,7 @@ import './Home.scss';
 
 const Home = (props) => {
 
-  const {handleSignout,} = useContext(firebaseAuth)
+  const {handleSignout} = useContext(firebaseAuth)
   return (
     <div className='home'>
       <h1 className='heading'>Nice Welcome here</h1>

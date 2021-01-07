@@ -11,17 +11,12 @@ const AuthProvider = (props) => {
 
 
   const handleSignup = () => {
-
-    // middle man between firebase and signup 
     console.log('handleSignup')
-    // calling signup from firebase server
     authMethods.signup(inputs.email, inputs.password,setErrors ,setToken )
     console.log(errors, token)
   }
   const handleSignin = () => {
-    //changed to handleSingin
     console.log('handleSignin!!!!')
-    // made signup signin
     authMethods.signin(inputs.email, inputs.password, setErrors, setToken)
     console.log(errors, token)
   }
@@ -33,7 +28,6 @@ const AuthProvider = (props) => {
   return (
     <firebaseAuth.Provider
     value={{
-      //replaced test with handleSignup
       handleSignup,
       handleSignin,
       token,
