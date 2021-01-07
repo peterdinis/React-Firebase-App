@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {authMethods} from '../firebase/authFunctions';
 
-export const firebaseAuth = React.createContext()
+export const FirebaseAuth = React.createContext()
 
 const AuthProvider = (props) => {
   const initState = {email: '', password: ''}
@@ -26,7 +26,7 @@ const AuthProvider = (props) => {
   }
 
   return (
-    <firebaseAuth.Provider
+    <FirebaseAuth.Provider
     value={{
       handleSignup,
       handleSignin,
@@ -37,7 +37,7 @@ const AuthProvider = (props) => {
       handleSignout,
     }}>
       {props.children}
-    </firebaseAuth.Provider>
+    </FirebaseAuth.Provider>
   );
 };
 

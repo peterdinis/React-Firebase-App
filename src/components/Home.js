@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
-import {firebaseAuth} from '../contexts/AuthProvider';
+import {FirebaseAuth} from '../contexts/AuthProvider';
 import './Home.scss';
 
 const Home = (props) => {
 
-  const {handleSignout} = useContext(firebaseAuth)
+  const {handleSignout} = useContext(FirebaseAuth)
   return (
     <div className='home'>
       <h1 className='heading'>Nice Welcome here</h1>

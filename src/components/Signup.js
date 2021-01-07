@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
-import {firebaseAuth} from '../contexts/AuthProvider';
+import {FirebaseAuth} from '../contexts/AuthProvider';
 import {withRouter} from 'react-router-dom';
 import './Signup.scss';
 
 const Signup = (props) => {
-  const {handleSignup, inputs, setInputs, errors} = useContext(firebaseAuth)
+  const {handleSignup, inputs, setInputs, errors} = useContext(FirebaseAuth)
   
   const handleSubmit = async (e) => {
     e.preventDefault()

@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
-import {firebaseAuth} from '../contexts/AuthProvider';
+import {FirebaseAuth} from '../contexts/AuthProvider';
 import './Signin.scss';
 
 const Signin = () => {
-  const {handleSignin, inputs, setInputs, errors} = useContext(firebaseAuth)
+  const {handleSignin, inputs, setInputs, errors} = useContext(FirebaseAuth)
   
   const handleSubmit = (e) => {
     e.preventDefault()
